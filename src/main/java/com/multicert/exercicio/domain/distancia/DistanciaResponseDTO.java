@@ -49,4 +49,19 @@ public class DistanciaResponseDTO {
     public boolean isValid() {
         return origem != null && destino != null && duracao != null && custoCombustivel > 0;
     }
+
+    public String duracaoHumanReadable() {
+        long seconds = duracao.getSeconds();
+        StringBuilder sb = new StringBuilder();
+
+        if (seconds / 3600 > 0) {
+            sb.append(seconds / 3600 + "h ");
+        }
+
+        if (seconds % 3600 > 0) {
+            sb.append((seconds % 3600) / 60 + "min");
+        }
+
+        return sb.toString();
+    }
 }

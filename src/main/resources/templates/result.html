@@ -9,7 +9,7 @@
 <div th:if="${responseDto != null}">
     <p th:text="'Coordenadas Origem: ' + ${responseDto.origem.getLatitude() + ', ' + responseDto.origem.getLongitude()}" />
     <p th:text="'Coordenadas Destino: ' + ${responseDto.destino.getLatitude() + ', ' + responseDto.destino.getLongitude()}" />
-    <p th:text="'Tempo: ' + ${responseDto.duracao.toHours() + ':' + responseDto.duracao.toMinutes()}" />
+    <p th:text="'Tempo: ' + ${responseDto.duracaoHumanReadable()}" />
     <p th:text="'Custo: ' + ${responseDto.custoCombustivel + ' litros de combustível'}" />
 </div>
 
