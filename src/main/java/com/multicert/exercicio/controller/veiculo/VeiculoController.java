@@ -1,4 +1,4 @@
-package com.multicert.exercicio.controller.Veiculo;
+package com.multicert.exercicio.controller.veiculo;
 
 import com.multicert.exercicio.domain.veiculo.Veiculo;
 import com.multicert.exercicio.service.veiculo.VeiculoService;
@@ -34,7 +34,7 @@ public class VeiculoController {
     }
 
     @DeleteMapping("/{matricula}")
-    public ResponseEntity removeVeiculo(@PathVariable String matricula) {
+    public ResponseEntity<Veiculo> removeVeiculo(@PathVariable String matricula) {
         Optional<Veiculo> veiculo = veiculoService.removeVeiculo(matricula);
 
         return veiculo.map(ResponseEntity::ok).orElseGet(() -> ResponseEntity.noContent().build());

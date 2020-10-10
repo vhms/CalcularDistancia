@@ -1,8 +1,5 @@
 package com.multicert.exercicio.domain.distancia;
 
-import com.google.maps.model.DirectionsLeg;
-import com.google.maps.model.DirectionsRoute;
-
 import java.text.DecimalFormat;
 import java.time.Duration;
 
