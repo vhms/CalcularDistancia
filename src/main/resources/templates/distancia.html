@@ -1,0 +1,20 @@
+<!DOCTYPE HTML>
+<html xmlns:th="https://www.thymeleaf.org">
+<head>
+    <title>Calcular distancia</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+<h1>Calcular distancia</h1>
+<form action="#" th:action="@{/}" th:object="${distanciaDto}" method="post">
+    <p>Origem: <input type="text" th:field="*{origem}" /></p>
+    <p>Destino: <input type="text" th:field="*{destino}" /></p>
+    <p>Veiculo: <select th:field="*{matricula}">
+        <option value="0">Escolha um veiculo</option>
+        <option th:each="veiculo : ${veiculoList}" th:value="${veiculo.matricula}"
+                th:text="${veiculo.marca + ' - ' + veiculo.modelo + ' - ' + veiculo.matricula}"></option>
+    </select></p>
+    <p><input type="submit" value="Submit" /> <input type="reset" value="Reset" /></p>
+</form>
+</body>
+</html>

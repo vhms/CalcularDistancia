@@ -1,0 +1,21 @@
+<!DOCTYPE HTML>
+<html xmlns:th="https://www.thymeleaf.org">
+<head>
+    <title>Calcular distancia</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+<h1>Calcular distancia</h1>
+<div th:if="${responseDto != null}">
+    <p th:text="'Coordenadas Origem: ' + ${responseDto.origem.getLatitude() + ', ' + responseDto.origem.getLongitude()}" />
+    <p th:text="'Coordenadas Destino: ' + ${responseDto.destino.getLatitude() + ', ' + responseDto.destino.getLongitude()}" />
+    <p th:text="'Tempo: ' + ${responseDto.duracao.toHours() + ':' + responseDto.duracao.toMinutes()}" />
+    <p th:text="'Custo: ' + ${responseDto.custoCombustivel + ' litros de combustível'}" />
+</div>
+
+<div th:if="${noResponse != null}">
+    <p th:text="${noResponse}" />
+</div>
+<a href="/">Submit another message</a>
+</body>
+</html>
